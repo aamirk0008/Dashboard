@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Sidebar } from "flowbite-react";
+import logoImg from "../assets/logo.webp";
 import {
   HiArrowSmRight,
   HiChartPie,
@@ -24,8 +25,8 @@ const SidebarDash = () => {
         aria-label="Default sidebar example"
         className="bg-red-400 border-r-2 border-t-2 border-gray-400"
       >
-        <Sidebar.Logo href="/" imgAlt="Nyouta Logo">
-          Nyouta
+        <Sidebar.Logo href="/" img={logoImg} imgAlt="Nyouta Logo">
+          Dashboard Temp
         </Sidebar.Logo>
         <Sidebar.Items>
           <Sidebar.ItemGroup>
@@ -33,7 +34,7 @@ const SidebarDash = () => {
               href="/admin/dashboard"
               className={`hover:translate-x-1 duration-300 ease-out ${
                 isActivePath("/admin/dashboard")
-                  ? "bg-gray-400 font-bold border-r-4 border-black"
+                  ? "bg-black font-bold border-r-4 border-red-500"
                   : ""
               }`}
               icon={HiChartPie}
@@ -44,7 +45,7 @@ const SidebarDash = () => {
               href="/admin/dashboard/add-product"
               className={`hover:translate-x-1 duration-300 ease-out ${
                 isActivePath("/admin/dashboard/add-product")
-                  ? "bg-gray-400 font-bold border-r-4 border-black"
+                  ? "bg-black font-bold border-r-4 border-red-500"
                   : ""
               }`}
               icon={HiShoppingBag}
@@ -55,7 +56,7 @@ const SidebarDash = () => {
               href="#"
               className={`hover:translate-x-1 duration-300 ease-out ${
                 isActivePath('/inbox') 
-                  ? 'bg-white bg-opacity-20 font-bold' 
+                  ? 'bg-black font-bold border-r-4 border-red-500' 
                   : ''
               }`}
               icon={HiInbox}
@@ -67,7 +68,7 @@ const SidebarDash = () => {
               href="#"
               className={`hover:translate-x-1 duration-300 ease-out ${
                 isActivePath('/users') 
-                  ? 'bg-white bg-opacity-20 font-bold' 
+                  ? 'bg-black font-bold border-r-4 border-red-500' 
                   : ''
               }`}
               icon={HiUser}
@@ -77,7 +78,7 @@ const SidebarDash = () => {
 
             <Sidebar.Item href="#" className={`${
               isActivePath('/signin') 
-                ? 'bg-white bg-opacity-20 font-bold' 
+                ? 'bg-black font-bold border-r-4 border-red-500' 
                 : ''
             }`} icon={HiArrowSmRight}>
               Sign In
